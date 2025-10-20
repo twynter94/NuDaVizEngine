@@ -2,6 +2,8 @@
 **NanoUncovered Data Visualization Engine**  
 _A modular Python library for scientific data visualization and analysis._
 
+⚠️ **Pre-Alpha / Early Development**  
+This library is **not yet ready for public use**
 ---
 
 ## 🌍 Overview  
