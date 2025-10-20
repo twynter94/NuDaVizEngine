@@ -111,6 +111,7 @@ You’re free to use, modify, and distribute this software with proper attributi
 
 ## 🔬 About the Author
 Theodore Wynter — Scientist & Software Developer
+
 PhD student and founder of **NanoUncovered**, a brand where Scientific Research Meets Tech Reviews.
 
 Passionate about nanosensor research, scientific communication, and creating tools that empower the next generation of scientists.
