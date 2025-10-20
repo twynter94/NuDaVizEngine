@@ -1,0 +1,128 @@
+# ======================================
+# 🧠 NUDaVizEngine - .gitignore
+# Clean repository setup for scientific Python library
+# ======================================
+
+# -------------------------------
+# 🐍 Python cache and compiled files
+# -------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# -------------------------------
+# 🧪 Virtual environments
+# -------------------------------
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+nudaviz-venv/
+
+# -------------------------------
+# ⚙️ Build and distribution files
+# -------------------------------
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# -------------------------------
+# 🧰 IDE and editor files
+# -------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# -------------------------------
+# 🧪 Testing, notebooks, and experimental scripts
+# -------------------------------
+.ipynb_checkpoints/
+notebooks/
+scratch/
+scripts/
+temp/
+test_output/
+experiments/
+
+# -------------------------------
+# 🧾 Logs and reports
+# -------------------------------
+*.log
+*.out
+*.err
+logs/
+
+# -------------------------------
+# 📊 Data files
+# -------------------------------
+data/
+datasets/
+*.csv
+*.dat
+*.txt
+*.tsv
+*.xlsx
+*.xls
+generate-tree.py
+
+# -------------------------------
+# 🧩 Build metadata
+# -------------------------------
+.pytest_cache/
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+.coverage
+*.cover
+.cache
+nosetests.xml
+*.mo
+*.pot
+
+# -------------------------------
+# 🧠 Project-specific exclusions
+# -------------------------------
+# User analysis scripts, local configs, or private data
+local_config.json
+dev_config.yaml
+*.bak
+*.tmp
+*.old
+
+# -------------------------------
+# 🧱 macOS / Windows / Linux OS junk
+# -------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -------------------------------
+# 🧪 PyInstaller
+# -------------------------------
+*.manifest
+*.spec
+
+# -------------------------------
+# 🔒 Security / Credentials (if any)
+# -------------------------------
+*.key
+*.pem
+*.env
