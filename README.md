@@ -28,24 +28,25 @@ To empower students and researchers with open, high-quality visualization tools 
 ---
 
 ## 🧩 Project Structure  
-
+```
 NUDaVizEngine/
 └── src/
-├── nudavizengine/
-│ ├── init.py
-│ ├── dataset/ # Core data abstractions (Dataset, UVVisDatasetGaussian16, etc.)
-│ ├── physical_quantities/ # Physical quantities and unit conversion
-│ ├── scientific_data/ # Domain-specific modules (UVVisSpectra, TGA, etc.)
-│ ├── utils/ # I/O handling, helpers, and shared functionality
-│ └── visualizers/ # Core visualization engine (matplotlib, seaborn, etc.)
-└── tests/
+    ├── nudavizengine/
+    │ ├── init.py
+    │ ├── dataset/ # Core data abstractions (Dataset, UVVisDatasetGaussian16, etc.)
+    │ ├── physical_quantities/ # Physical quantities and unit conversion
+    │ ├── scientific_data/ # Domain-specific modules (UVVisSpectra, TGA, etc.)
+    │ ├── utils/ # I/O handling, helpers, and shared functionality
+    │ └── visualizers/ # Core visualization engine (matplotlib, seaborn, etc.)
+    └── tests/
 │
 ├── docs/
+├── tests/
 ├── examples/
 ├── pyproject.toml
 ├── LICENSE
 └── README.md
-
+```
 ---
 
 ## 🚀 Getting Started  
@@ -54,14 +55,14 @@ NUDaVizEngine/
 Once released on PyPI:
 ```bash
 pip install nudavizengine
+```
 For now, you can clone the repository:
-
-bash
+```bash
 git clone https://github.com/twynter94/NUDaVizEngine.git
 cd NUDaVizEngine
-🧪 Example (early implementation)
-python
-
+```
+## 🧪 Example (early implementation)
+```python
 from nudavizengine import Dataset, UVVisSpectra, UVVisDatasetHP8453
 
 # Create a UV-Vis object and add a dataset from the Agilent HP8453 spectrophotometer
@@ -75,9 +76,10 @@ print(uvSpectra.describeDatasets())
 
 # Analyze or visualize
 uvSpectra.visualize(preview=True)
+```
 ⚠️ Note: Plotting and visualization functions are still under development.
 
-🧭 Project Vision
+## 🧭 Project Vision
 NUDaVizEngine is part of the NanoUncovered brand — where scientific research meets tech reviews.
 
 Through the NanoUncovered ecosystem:
@@ -90,25 +92,30 @@ Through the NanoUncovered ecosystem:
 
 This project exists to lighten the load for researchers, so anyone — from a PhD student to a professor — can produce high-quality scientific graphics effortlessly.
 
-📚 Citation
+## 📚 Citation
 If you use NUDaVizEngine in research or videos, please cite:
 
 Wynter, T. (2025). NUDaVizEngine: A modular Python library for scientific data visualization and analysis.
 Part of the NanoUncovered ecosystem.
 https://github.com/twynter94/NUDaVizEngine
 
-🤝 Contributing
+## 🤝 Contributing
 Contributions are welcome!
 Whether it’s code, documentation, or feedback — feel free to open an issue or submit a pull request.
 
-📜 License
+## 📜 License
 Released under the BSD 3-Clause License — see LICENSE for details.
 You’re free to use, modify, and distribute this software with proper attribution.
 
-🔬 About the Author
+## 🔬 About the Author
 Theodore Wynter — Scientist & Software Developer
-PhD student and founder of NanoUncovered, a brand where Scientific Research Meets Tech Reviews.
+PhD student and founder of **NanoUncovered**, a brand where Scientific Research Meets Tech Reviews.
 
 Passionate about nanosensor research, scientific communication, and creating tools that empower the next generation of scientists.
 
-🧭 NUDaVizEngine is still in early development — stay tuned for updates as the ecosystem grows.
+## 🌐 Connect with NanoUncovered
+
+- YouTube: [NanoUncovered Channel](https://www.youtube.com/@NanoUncovered)  
+- LinkedIn: [Theodore Wynter](https://www.linkedin.com/in/theodorewynter/)
+
+🧭 NUDaVizEngine is still in early development follow for updates on NUDaVizEngine, NUSciTools, scientific visualization tutorials, and nanosensor research insights!
