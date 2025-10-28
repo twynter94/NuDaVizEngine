@@ -8,8 +8,8 @@
 import pandas as pd
 import logging
 logger = logging.getLogger(__name__)
-from ..utils import getFileType, findMatch, mergeStrings
-from .dataset_io import loadDatasetFromCSV
+from nudavizengine.utils import getFileType, findMatch, mergeStrings
+from nudavizengine.dataset.dataset_io import loadDatasetFromCSV
 
 class Dataset:
     def __init__(self,
@@ -38,6 +38,14 @@ class Dataset:
     def describeData(self):
         return self.__data.info()
     
+    def getDataForQuantity(self, quantity:str) -> pd.Series | None:
+        logger.debug(f"check if the quantity exists in the data frame: {quantity}")
+        for dfKey in self.__dfKeyList:
+            if findMatch(dfKey, rf"^{quantity.lower()}_\d+"):
+                return self.__data[dfKey]
+        else:
+            return None
+
     def __updateDataDictionary(self, 
                                yCol1:tuple[str,str,int], 
                                kwargs:dict):
@@ -94,11 +102,11 @@ class Dataset:
        
     def __updateDataKeys(self) -> None:
         logger.debug("Create and update column names for the data frame based on user input")
-        colName:str = mergeStrings(self.__xColName, self.__xColUnit)
+        colName:str = mergeStrings(f"{self.__xColName}_{self.__xColNum}", self.__xColUnit)
         self.__dfKeyList.append(colName)
         self.updateColumnName(self.__xColNum, self.__dfKeyList[0])
         for yColDict in self.__yColList:
-            colName = mergeStrings(yColDict["yColName"], yColDict["yColUnit"])
+            colName = mergeStrings(f"{yColDict["yColName"]}_{yColDict["yColNum"]}", yColDict["yColUnit"])
             self.__dfKeyList.append(colName)
             self.updateColumnName(yColDict["yColNum"], colName)
 

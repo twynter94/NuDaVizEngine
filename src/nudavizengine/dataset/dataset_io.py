@@ -8,6 +8,6 @@
 import pandas as pd
 
 def loadDatasetFromCSV(filePath:str) -> pd.DataFrame:
-    df = pd.read_csv(filePath,
+    df = pd.read_csv(filepath_or_buffer=filePath,
                      encoding="UTF-16")
     return df

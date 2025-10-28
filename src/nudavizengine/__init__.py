@@ -18,9 +18,9 @@ common experimental techniques (UV-Vis, IR, etc.) and computational data
 Top-level imports are provided for convenience.
 """
 
-from nudavizengine.scientific_data.spectroscopy.uvvis_spectra import UVVisSpectra
-from nudavizengine.dataset.dataset import Dataset
-from nudavizengine.dataset.uvvis_dataset_hp8453 import UVVisDatasetHP8453
+from nudavizengine.scientific_data import UVVisSpectra
+from nudavizengine.dataset import Dataset, UVVisDatasetHP8453
+from nudavizengine.visualizers import MatplotlibVisualizer, BaseVisualizer, VisualizerRegistry
 
 # Public API
 __all__ = [
@@ -31,3 +31,6 @@ __all__ = [
 
 #package-level initialization code
 print(f"NUDaVizEngine v{__version__} loaded!")
+
+#Visualization engines supported currently
+print(f"Visualization engines available: \n\n{VisualizerRegistry.showRegistry()}")

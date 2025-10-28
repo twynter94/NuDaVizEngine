@@ -6,10 +6,12 @@
 # LICENSE file in the root directory of this source tree.
 
 from abc import ABC, abstractmethod
-from nudavizengine.dataset.dataset import Dataset
+from nudavizengine.dataset import Dataset
+from nudavizengine.visualizers import MatplotlibVisualizer, VisualizerRegistry, BaseVisualizer
 
 class BaseSpectra(ABC):
     def __init__(self, 
+                 visualizerID:str,
                  yLabel:str,
                  yUnit:str,
                  xLabel:str,
@@ -17,27 +19,33 @@ class BaseSpectra(ABC):
                  xQty:str,
                  xUnit:str):
         #set axis labels for the final plot
-        self.__yLabel:str = yLabel
-        self.__xLabel:str = xLabel
+        self._visualizerID:str = visualizerID
+        self._visualizer: BaseVisualizer = VisualizerRegistry.createVisualizer(self._visualizerID)
+        self._yLabel:str = yLabel
+        self._xLabel:str = xLabel
         #Specify the actual Phsyical quantities and units that are to be on the plot.
         #If data set units do not match what is specified here, then the code will attempt to convert if possible
-        self.__yQty:str = yQty
-        self.__yUnit:str = yUnit
-        self.__xQty:str = xQty
-        self.__xUnit:str = xUnit
-        self.__datasets:list[Dataset] = []
+        self._yQty:str = yQty
+        self._yUnit:str = yUnit
+        self._xQty:str = xQty
+        self._xUnit:str = xUnit
+        self._datasets:list[Dataset] = []
 
     def addDataset(self, dataset: Dataset) -> None:
-        self.__datasets.append(dataset)
+        self._datasets.append(dataset)
 
     def describeDatasets(self):
-        return [ds.describeData() for ds in self.__datasets]
+        return [ds.describeData() for ds in self._datasets]
+
+    @classmethod
+    def showVisualizers(cls):
+        return VisualizerRegistry.showRegistry()
     
     @abstractmethod
     def validateDataset(self):
         pass
 
     @abstractmethod
-    def visualizeSpectra(self):
+    def visualizeSpectra(self, xQty:str, yQty:str):
         pass
     

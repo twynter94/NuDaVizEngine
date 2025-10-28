@@ -5,17 +5,18 @@
 # This source code is licensed under the BSD 3-Clause License found in the
 # LICENSE file in the root directory of this source tree.
 
-from .base_spectra import BaseSpectra
+from nudavizengine.scientific_data.spectroscopy.base_spectra import BaseSpectra
 
 class IRSpectra(BaseSpectra):
     def __init__(self, 
+                 visualizerID: str,
                  yLabel:str = "Transmittance (T)",
                  yUnit:str = "%",
                  xLabel:str = "Wavenumber",
                  yQty:str = "Transmittance",
                  xQty:str = "wavenumber",
                  xUnit:str = ""):
-        super().__init__(yLabel, yUnit, xLabel, yQty, xQty, xUnit)
+        super().__init__(visualizerID,yLabel, yUnit, xLabel, yQty, xQty, xUnit)
     
     def validateDataset(self):
         raise NotImplementedError("Not yet implemented")
